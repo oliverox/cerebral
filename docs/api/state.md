@@ -18,31 +18,29 @@ The only way to update the state of your application is in an action. Here is a 
 
 ```js
 function someAction({state}) {
-  // Concats passed array to existing array
-  state.concat('some.path', ['someValueA', 'someValueB'])
-  // Increment value at given path (default increment is 1)
-  state.increment('some.path', 1)
+  // Set or replace a value
+  state.set('some.path', 'someValue')
+  // Toggle a boolean value
+  state.toggle('some.path')
+  // Unset a key and its value
+  state.unset('some.path')
   // Merge the keys and their values into existing object. Handled as a
   // change on all paths merged in
   state.merge('some.path', {
     some: 'value'
   })
-  // Removes last item in array
-  state.pop('some.path')
   // Pushes a value to the end of the array
   state.push('some.path', 'someValue')
-  // Set or replace a value
-  state.set('some.path', 'someValue')
-  // Removes first item in array
-  state.shift('some.path')
-  // Splices arrays
-  state.splice('some.path', 2, 1)
-  // Toggle a boolean value
-  state.toggle('some.path')
-  // Unset a key and its value
-  state.unset('some.path')
   // Puts the value at the beginning of the array
   state.unshift('some.path', 'someValue')
+  // Removes last item in array
+  state.pop('some.path')
+  // Removes first item in array
+  state.shift('some.path')
+  // Concats passed array to existing array
+  state.concat('some.path', ['someValueA', 'someValueB'])
+  // Splices arrays
+  state.splice('some.path', 2, 1)
 }
 ```
 
